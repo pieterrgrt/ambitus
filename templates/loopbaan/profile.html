@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Profiel" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Je profiel" %}</h1>
+<p class="lead">{% translate "Schrijf zoals je praat. Steekwoorden zijn prima. Ambitus gebruikt dit voor alle adviezen en teksten, en verzint er niets bij." %}</p>
+<form method="post">{% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.GET.next }}">
+  <div class="card">
+    <h2>{% translate "Over jou" %}</h2>
+    {% include "_field.html" with field=form.situation %}
+    {% include "_field.html" with field=form.education %}
+    {% include "_field.html" with field=form.experience %}
+    {% include "_field.html" with field=form.skills %}
+    {% include "_field.html" with field=form.languages %}
+  </div>
+  <div class="card">
+    <h2>{% translate "Wat je zoekt" %}</h2>
+    {% include "_field.html" with field=form.interests %}
+    {% include "_field.html" with field=form.values %}
+    {% include "_field.html" with field=form.location %}
+    {% include "_field.html" with field=form.constraints %}
+  </div>
+  <div class="card">
+    <h2>{% translate "Cv" %}</h2>
+    {% include "_field.html" with field=form.cv_text %}
+  </div>
+  <button class="button primary block" type="submit">{% translate "Opslaan" %}</button>
+</form>
+{% endblock %}

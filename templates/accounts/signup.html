@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Account maken" %} · Ambitus{% endblock %}
+{% block content %}
+<p class="eyebrow">{% translate "Je bent uitgenodigd" %}</p>
+<h1>{% translate "Welkom bij Ambitus" %}</h1>
+<p class="lead">{% translate "Maak je account. Daarna vul je je profiel in en kun je meteen beginnen." %}</p>
+<form method="post">{% csrf_token %}
+  <div class="card">
+    {% include "_field.html" with field=form.first_name %}
+    {% include "_field.html" with field=form.email %}
+    {% include "_field.html" with field=form.password %}
+    {% include "_field.html" with field=form.language %}
+    {% include "_field.html" with field=form.privacy %}
+    <p class="help"><a href="{% url 'privacy' %}" target="_blank">{% translate "Lees hoe Ambitus met je gegevens omgaat" %}</a></p>
+  </div>
+  <button class="button primary block" type="submit">{% translate "Account maken" %}</button>
+</form>
+{% endblock %}

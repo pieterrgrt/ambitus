@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ document.get_kind_display }} · Ambitus{% endblock %}
+{% block content %}
+<p class="eyebrow"><a href="{{ item.get_absolute_url }}">← {{ item.role }}</a></p>
+<h1>{{ document.get_kind_display }}</h1>
+<p class="muted">{{ item.organisation }} · {{ document.get_language_display }} · {{ document.created_at|date:"j F Y" }}</p>
+{% if document.instructions %}
+  <div class="card"><p class="eyebrow">{% translate "Let hierop" %}</p><p style="white-space:pre-wrap">{{ document.instructions }}</p></div>
+{% endif %}
+<form method="post">{% csrf_token %}
+  <div class="card">{% include "_field.html" with field=form.content %}</div>
+  <div class="actions">
+    <button class="button primary" type="submit">{% translate "Opslaan" %}</button>
+    <button class="button" type="button" data-copy="#id_content" data-copied="{% translate 'Gekopieerd' %}">{% translate "Kopiëren" %}</button>
+    <a class="button" href="{% url 'document_delete' item.pk document.pk %}">{% translate "Verwijderen" %}</a>
+  </div>
+</form>
+{% endblock %}

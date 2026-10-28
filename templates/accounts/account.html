@@ -1,0 +1,29 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Account" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Account" %}</h1>
+<p class="muted">{{ user.email }}</p>
+<form method="post">{% csrf_token %}
+  <div class="card">{% include "_form.html" %}</div>
+  <button class="button primary" type="submit">{% translate "Opslaan" %}</button>
+</form>
+
+{% if user.is_staff %}
+<h2>{% translate "Beheer" %}</h2>
+<div class="card"><div class="actions" style="margin:0">
+  <a class="button" href="{% url 'invites' %}">{% translate "Mensen uitnodigen" %}</a>
+  <a class="button" href="{% url 'admin:index' %}">{% translate "Beheeromgeving" %}</a>
+</div></div>
+{% endif %}
+
+<h2>{% translate "Je gegevens" %}</h2>
+<div class="card"><div class="actions" style="margin:0">
+  <a class="button" href="{% url 'password_change' %}">{% translate "Wachtwoord wijzigen" %}</a>
+  <a class="button" href="{% url 'account_export' %}">{% translate "Alles downloaden" %}</a>
+  <a class="button danger" href="{% url 'account_delete' %}">{% translate "Account verwijderen" %}</a>
+</div></div>
+
+<form method="post" action="{% url 'logout' %}" style="margin-top:24px">{% csrf_token %}
+  <button class="button block" type="submit">{% translate "Uitloggen" %}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+# Ambitus on a server that already hosts other sites.
+# The app listens on 127.0.0.1 only; the server's existing web server
+# (Caddy, nginx, ...) forwards the domain to it. See deploy/README.md.
+
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://ambitus:${POSTGRES_PASSWORD}@db:5432/ambitus
+    ports:
+      - "127.0.0.1:${AMBITUS_PORT:-8006}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ambitus
+      POSTGRES_USER: ambitus
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ambitus -d ambitus"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

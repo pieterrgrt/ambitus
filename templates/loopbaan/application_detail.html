@@ -1,0 +1,54 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ item.role }} · Ambitus{% endblock %}
+{% block content %}
+<p class="eyebrow"><a href="{% url 'applications' %}">← {% translate "Sollicitaties" %}</a></p>
+<h1>{{ item.role }}</h1>
+<p class="lead">{{ item.organisation }}{% if item.location %} · {{ item.location }}{% endif %}</p>
+
+<div class="card">
+  <form method="post" action="{% url 'application_status' item.pk %}" class="row">{% csrf_token %}
+    <label for="id_status" class="eyebrow" style="margin:0">{% translate "Status" %}</label>
+    <select name="status" id="id_status" data-autosubmit style="flex:1">
+      {% for value, label in status_form.fields.status.choices %}<option value="{{ value }}"{% if value == item.status %} selected{% endif %}>{{ label }}</option>{% endfor %}
+    </select>
+    <noscript><button class="button small" type="submit">{% translate "Opslaan" %}</button></noscript>
+  </form>
+  <ul class="list" style="margin-top:10px">
+    {% if item.next_step %}<li><span class="muted">{% translate "Volgende stap" %}</span><br><strong>{{ item.next_step }}</strong>{% if item.next_step_date %} · {{ item.next_step_date|date:"j F" }}{% endif %}</li>{% endif %}
+    {% if item.deadline %}<li><span class="muted">{% translate "Deadline" %}</span><br><strong{% if item.is_overdue %} class="error"{% endif %}>{{ item.deadline|date:"j F Y" }}</strong></li>{% endif %}
+    {% if item.contact %}<li><span class="muted">{% translate "Contactpersoon" %}</span><br>{{ item.contact }}</li>{% endif %}
+    {% if item.url %}<li><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{% translate "Vacature openen" %} ↗</a></li>{% endif %}
+  </ul>
+  {% if item.notes %}<p class="muted" style="margin-top:10px">{{ item.notes|linebreaksbr }}</p>{% endif %}
+  <div class="actions"><a class="button small" href="{% url 'application_edit' item.pk %}">{% translate "Bewerken" %}</a></div>
+</div>
+
+<h2>{% translate "Hulp van Ambitus" %}</h2>
+{% if not item.vacancy_text %}<p class="notice">{% translate "Plak eerst de vacaturetekst bij deze sollicitatie, dan kan Ambitus gericht helpen." %} <a href="{% url 'application_edit' item.pk %}">{% translate "Toevoegen" %}</a></p>{% endif %}
+<div class="grid-2">
+  <a class="card" href="{% url 'letter_new' item.pk %}"><h3>{% translate "Motivatiebrief" %}</h3><p class="muted">{% translate "Een eerste versie in de taal van de vacature." %}</p></a>
+  <a class="card" href="{% url 'cv_new' item.pk %}"><h3>{% translate "Cv afstemmen" %}</h3><p class="muted">{% translate "Wat je aan je cv verandert voor deze functie." %}</p></a>
+  <a class="card" href="{% url 'interview_new' item.pk %}"><h3>{% translate "Gesprek voorbereiden" %}</h3><p class="muted">{% translate "Waarschijnlijke vragen, en oefenen met feedback." %}</p></a>
+</div>
+{% include "_ai_budget.html" %}
+
+{% if documents or preps %}
+<h2>{% translate "Gemaakt voor deze sollicitatie" %}</h2>
+<div class="card"><ul class="list">
+  {% for d in documents %}<li><a href="{{ d.get_absolute_url }}"><strong>{{ d.get_kind_display }}</strong> <span class="pill">{{ d.language|upper }}</span><br><span class="muted">{{ d.created_at|date:"j F, H:i" }}</span></a></li>{% endfor %}
+  {% for p in preps %}<li><a href="{{ p.get_absolute_url }}"><strong>{% translate "Gespreksvoorbereiding" %}</strong> <span class="pill">{{ p.language|upper }}</span><br><span class="muted">{{ p.created_at|date:"j F, H:i" }}</span></a></li>{% endfor %}
+</ul></div>
+{% endif %}
+
+{% if item.vacancy_text %}
+<details class="card"><summary>{% translate "Vacaturetekst" %}</summary><p>{{ item.vacancy_text|linebreaksbr }}</p></details>
+{% endif %}
+
+{% if history %}
+<details class="card"><summary>{% translate "Geschiedenis" %}</summary>
+  <ul class="list">{% for h in history %}<li>{{ h.get_status_display }} <span class="muted">· {{ h.changed_at|date:"j F Y" }}</span></li>{% endfor %}</ul>
+</details>
+{% endif %}
+
+<p style="margin-top:24px"><a class="muted" href="{% url 'application_delete' item.pk %}">{% translate "Sollicitatie verwijderen" %}</a></p>
+{% endblock %}

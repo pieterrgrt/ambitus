@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% translate "Deze link werkt niet meer" %}</h1>
+<div class="card"><p>{% translate "De uitnodiging is al gebruikt of verlopen. Vraag degene die je heeft uitgenodigd om een nieuwe link." %}</p>
+<a class="button" href="{% url 'login' %}">{% translate "Inloggen" %}</a></div>
+{% endblock %}

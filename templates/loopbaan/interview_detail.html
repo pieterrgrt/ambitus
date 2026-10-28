@@ -1,0 +1,46 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Gesprek voorbereiden" %} · Ambitus{% endblock %}
+{% block content %}
+<p class="eyebrow"><a href="{{ item.get_absolute_url }}">← {{ item.role }}</a></p>
+<h1>{% translate "Gesprek voorbereiden" %}</h1>
+<div class="card"><p style="margin:0">{{ prep.briefing }}</p></div>
+
+<h2>{% translate "Vragen die je kunt verwachten" %}</h2>
+<div class="card">
+  {% for q in questions %}
+  <details id="vraag-{{ q.index }}"{% if open_index == q.index|stringformat:"d" %} open{% endif %}>
+    <summary><span class="qnum">{{ forloop.counter }}.</span> {{ q.question }}</summary>
+    <p><strong>{% translate "Waarom ze dit vragen" %}</strong><br>{{ q.why_they_ask }}</p>
+    <p><strong>{% translate "Hoe je het aanpakt" %}</strong><br>{{ q.how_to_answer }}</p>
+
+    {% for p in q.practice %}
+      <div class="feedback">
+        <p class="eyebrow">{% translate "Je oefenantwoord" %} · {{ p.created_at|date:"j M, H:i" }}</p>
+        <p>{{ p.answer|linebreaksbr }}</p>
+        <h4>{% translate "Wat goed is" %}</h4>
+        <ul class="plain">{% for s in p.feedback.strengths %}<li>{{ s }}</li>{% endfor %}</ul>
+        <h4>{% translate "Wat beter kan" %}</h4>
+        <ul class="plain">{% for s in p.feedback.improvements %}<li>{{ s }}</li>{% endfor %}</ul>
+        <h4>{% translate "Sterkere versie" %}</h4>
+        <p class="letter">{{ p.feedback.stronger_version }}</p>
+      </div>
+    {% endfor %}
+
+    <form method="post" action="{% url 'interview_practice' item.pk prep.pk %}">{% csrf_token %}
+      <input type="hidden" name="question_index" value="{{ q.index }}">
+      <div class="field">
+        <label for="answer-{{ q.index }}">{% if q.practice %}{% translate "Nog een keer oefenen" %}{% else %}{% translate "Oefen je antwoord" %}{% endif %}</label>
+        <textarea id="answer-{{ q.index }}" name="answer" rows="5" required placeholder="{% translate 'Schrijf op wat je zou zeggen.' %}"></textarea>
+      </div>
+      {% translate "Feedback vragen" as label %}{% include "_ai_submit.html" with label=label %}
+    </form>
+  </details>
+  {% endfor %}
+</div>
+{% include "_ai_budget.html" %}
+
+<h2>{% translate "Vragen die jij kunt stellen" %}</h2>
+<div class="card"><ul class="plain">{% for q in prep.questions_to_ask %}<li>{{ q }}</li>{% endfor %}</ul></div>
+
+<p style="margin-top:24px"><a class="muted" href="{% url 'interview_delete' item.pk prep.pk %}">{% translate "Voorbereiding verwijderen" %}</a></p>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Ambitus</p>
+  <h1>{% translate "Klaar met studeren. En nu?" %}</h1>
+  <p class="lead">{% translate "Ambitus helpt je uitzoeken wat je wilt, houdt je sollicitaties bij en helpt je met je brief, je cv en je gesprek." %}</p>
+</section>
+<div class="card">
+  <ol class="steps">
+    <li><span>{% translate "Vertel wie je bent en wat je belangrijk vindt." %}</span></li>
+    <li><span>{% translate "Ontdek richtingen die bij je passen, met concrete functies en eerste stappen." %}</span></li>
+    <li><span>{% translate "Houd je sollicitaties bij en laat Ambitus meeschrijven en meedenken." %}</span></li>
+  </ol>
+</div>
+<div class="actions">
+  <a class="button primary" href="{% url 'login' %}">{% translate "Inloggen" %}</a>
+</div>
+<p class="muted" style="margin-top:16px">{% translate "Ambitus werkt op uitnodiging. Heb je een link gekregen? Open die om je account te maken." %}</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% translate "Verwijderen?" %}</h1>
+<div class="card">
+  <p>{% blocktranslate %}Weet je zeker dat je „{{ object }}” wilt verwijderen? Dit kan niet ongedaan worden gemaakt.{% endblocktranslate %}</p>
+  <form method="post" class="actions">{% csrf_token %}
+    <button class="button danger" type="submit">{% translate "Verwijderen" %}</button>
+    <a class="button" href="{{ back }}">{% translate "Annuleren" %}</a>
+  </form>
+</div>
+{% endblock %}

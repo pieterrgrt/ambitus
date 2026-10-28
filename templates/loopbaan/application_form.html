@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% if item %}{% translate "Bewerken" %}{% else %}{% translate "Nieuwe sollicitatie" %}{% endif %}</h1>
+<form method="post">{% csrf_token %}
+  <div class="card">
+    {% for error in form.non_field_errors %}<p class="message error">{{ error }}</p>{% endfor %}
+    {% include "_field.html" with field=form.organisation %}
+    {% include "_field.html" with field=form.role %}
+    {% include "_field.html" with field=form.status %}
+    {% include "_field.html" with field=form.url %}
+    {% include "_field.html" with field=form.location %}
+  </div>
+  <div class="card">
+    <div class="grid-2">
+      {% include "_field.html" with field=form.deadline %}
+      {% include "_field.html" with field=form.next_step_date %}
+    </div>
+    {% include "_field.html" with field=form.next_step %}
+    {% include "_field.html" with field=form.contact %}
+  </div>
+  <div class="card">
+    {% include "_field.html" with field=form.vacancy_text %}
+    {% include "_field.html" with field=form.notes %}
+  </div>
+  <div class="actions">
+    <button class="button primary" type="submit">{% translate "Opslaan" %}</button>
+    <a class="button" href="{% if item %}{{ item.get_absolute_url }}{% else %}{% url 'applications' %}{% endif %}">{% translate "Annuleren" %}</a>
+  </div>
+</form>
+{% endblock %}

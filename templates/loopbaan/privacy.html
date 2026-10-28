@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Privacy" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Hoe Ambitus met je gegevens omgaat" %}</h1>
+<div class="card">
+  <h3>{% translate "Wat we bewaren" %}</h3>
+  <p>{% translate "Je naam, e-mailadres, wat je in je profiel en de oriëntatievragen invult, je sollicitaties en de teksten die Ambitus voor je maakt. Je wachtwoord wordt alleen versleuteld opgeslagen." %}</p>
+  <h3>{% translate "Waarvoor" %}</h3>
+  <p>{% translate "Alleen om jou te helpen. We verkopen niets, tonen geen advertenties en delen je gegevens met niemand anders." %}</p>
+  <h3>{% translate "AI" %}</h3>
+  <p>{% translate "Als je op een AI-knop drukt, sturen we je profiel, je cv en de betreffende vacature naar Anthropic (de maker van Claude) om de tekst te laten schrijven. Anthropic gebruikt die gegevens volgens zijn API-voorwaarden niet om modellen te trainen. Zet geen gegevens in Ambitus die je niet wilt delen, zoals je BSN of medische informatie." %}</p>
+  <h3>{% translate "Waar" %}</h3>
+  <p>{% translate "De gegevens staan op een server in de EU." %}</p>
+  <h3>{% translate "Jouw rechten" %}</h3>
+  <p>{% translate "Je kunt op je accountpagina al je gegevens downloaden en je account met alles erin definitief verwijderen." %}</p>
+</div>
+{% endblock %}

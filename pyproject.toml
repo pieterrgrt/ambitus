@@ -1,0 +1,17 @@
+[project]
+name = "ambitus"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.3.0",
+    "dj-database-url>=3.1.2",
+    "django>=6.1.2",
+    "gunicorn>=26.2.0",
+    "psycopg[binary]>=3.3.6",
+    "whitenoise>=6.12.0",
+]
+
+[dependency-groups]
+dev = [
+    "polib>=1.2.0",
+]

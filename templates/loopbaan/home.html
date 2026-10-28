@@ -1,0 +1,62 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% blocktranslate with name=user.first_name %}Hoi {{ name }}{% endblocktranslate %}</h1>
+
+{% if profile.completeness < 60 %}
+<a class="card" href="{% url 'profile' %}">
+  <p class="eyebrow">{% translate "Eerste stap" %}</p>
+  <h2>{% translate "Vul je profiel aan" %}</h2>
+  <p class="muted">{% translate "Hoe meer Ambitus van je weet, hoe beter het advies en hoe persoonlijker je brieven." %}</p>
+  <div class="meter" aria-label="{% translate 'Profiel' %} {{ profile.completeness }}%"><span style="width: {{ profile.completeness }}%"></span></div>
+  <p class="help">{% blocktranslate with p=profile.completeness %}{{ p }}% ingevuld{% endblocktranslate %}</p>
+</a>
+{% endif %}
+
+<div class="card">
+  <div class="row between">
+    <h2 style="margin:0">{% translate "Sollicitaties" %}</h2>
+    <a class="button small" href="{% url 'application_new' %}">+ {% translate "Nieuw" %}</a>
+  </div>
+  {% if active_count %}
+    <div class="stats" style="margin-top:14px">
+      {% for label, n in status_counts %}<div class="stat"><b>{{ n }}</b><span>{{ label }}</span></div>{% endfor %}
+    </div>
+  {% else %}
+    <p class="muted" style="margin-top:10px">{% translate "Nog niets bijgehouden. Zet er een vacature in die je interessant vindt, ook als je nog twijfelt." %}</p>
+  {% endif %}
+</div>
+
+{% if upcoming %}
+<div class="card">
+  <h2>{% translate "Binnenkort" %}</h2>
+  <ul class="list">
+    {% for a in upcoming %}
+      <li><a href="{{ a.get_absolute_url }}">
+        <div class="row between">
+          <strong>{{ a.role }}</strong>
+          <span class="pill{% if a.is_overdue %} overdue{% endif %}">{{ a.upcoming_date|date:"j M" }}</span>
+        </div>
+        <span class="muted">{{ a.organisation }}{% if a.next_step and a.upcoming_date == a.next_step_date %} · {{ a.next_step }}{% elif a.upcoming_date == a.deadline %} · {% translate "deadline" %}{% endif %}</span>
+      </a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<div class="card">
+  <p class="eyebrow">{% translate "Oriëntatie" %}</p>
+  {% if orientation %}
+    <h2>{% translate "Jouw richtingen" %}</h2>
+    <ul class="plain">{% for d in orientation.directions %}<li>{{ d.title }}</li>{% endfor %}</ul>
+    <div class="actions">
+      <a class="button small" href="{{ orientation.get_absolute_url }}">{% translate "Bekijken" %}</a>
+      <a class="button small" href="{% url 'orientation' %}">{% translate "Opnieuw doen" %}</a>
+    </div>
+  {% else %}
+    <h2>{% translate "Weet je nog niet goed wat je wilt?" %}</h2>
+    <p class="muted">{% translate "Beantwoord een paar vragen en krijg richtingen die bij je passen, met concrete functies en eerste stappen." %}</p>
+    <a class="button primary" href="{% url 'orientation' %}">{% translate "Begin met oriënteren" %}</a>
+  {% endif %}
+</div>
+{% include "_ai_budget.html" %}
+{% endblock %}

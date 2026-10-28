@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Inloggen" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Inloggen" %}</h1>
+<form method="post">{% csrf_token %}
+  <div class="card">{% include "_form.html" %}</div>
+  <input type="hidden" name="next" value="{{ next }}">
+  <button class="button primary block" type="submit">{% translate "Inloggen" %}</button>
+</form>
+<p class="muted" style="margin-top:16px">{% translate "Wachtwoord vergeten? Vraag degene die je heeft uitgenodigd om je wachtwoord opnieuw in te stellen." %}</p>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Oriëntatie" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Wat past bij jou?" %}</h1>
+<p class="lead">{% translate "Neem er een kwartier voor. Er zijn geen goede of foute antwoorden, en je mag vragen overslaan." %}</p>
+{% if profile.completeness < 30 %}
+  <p class="notice">{% translate "Tip: vul eerst je profiel in (opleiding, ervaring), dan worden de richtingen veel concreter." %} <a href="{% url 'profile' %}?next={% url 'orientation' %}">{% translate "Naar je profiel" %}</a></p>
+{% endif %}
+<form method="post">{% csrf_token %}
+  <div class="card">{% include "_form.html" %}</div>
+  {% translate "Laat richtingen zien" as label %}{% include "_ai_submit.html" with label=label %}
+  {% include "_ai_budget.html" %}
+</form>
+
+{% if history %}
+  <h2>{% translate "Eerder" %}</h2>
+  <div class="card"><ul class="list">
+    {% for o in history %}
+      <li><a href="{{ o.get_absolute_url }}"><strong>{{ o.created_at|date:"j F Y" }}</strong><br>
+        <span class="muted">{% for d in o.directions %}{{ d.title }}{% if not forloop.last %} · {% endif %}{% endfor %}</span></a></li>
+    {% endfor %}
+  </ul></div>
+{% endif %}
+{% endblock %}

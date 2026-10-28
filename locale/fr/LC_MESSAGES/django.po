@@ -1,0 +1,1042 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 10:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: accounts/forms.py:11 accounts/forms.py:17
+msgid "E-mailadres"
+msgstr "Adresse e-mail"
+
+#: accounts/forms.py:16 accounts/forms.py:48
+msgid "Voornaam"
+msgstr "Prénom"
+
+#: accounts/forms.py:19
+msgid "Wachtwoord"
+msgstr "Mot de passe"
+
+#: accounts/forms.py:21
+msgid "Minstens 10 tekens."
+msgstr "Au moins 10 caractères."
+
+#: accounts/forms.py:23 accounts/forms.py:48 loopbaan/forms.py:76
+#: loopbaan/models.py:154 templates/base.html:29
+msgid "Taal"
+msgstr "Langue"
+
+#: accounts/forms.py:24
+msgid "Ik heb gelezen hoe Ambitus met mijn gegevens omgaat."
+msgstr "J'ai lu comment Ambitus traite mes données."
+
+#: accounts/forms.py:29
+msgid "Er bestaat al een account met dit e-mailadres."
+msgstr "Un compte existe déjà avec cette adresse e-mail."
+
+#: accounts/forms.py:55
+msgid "Bijvoorbeeld: Sanne, studiegenoot"
+msgstr "Par exemple : Camille, camarade de promo"
+
+#: accounts/models.py:38
+msgid "e-mailadres"
+msgstr "adresse e-mail"
+
+#: accounts/models.py:40
+msgid "taal"
+msgstr "langue"
+
+#: accounts/models.py:64
+msgid "voor wie"
+msgstr "pour qui"
+
+#: accounts/views.py:43
+msgid ""
+"Welkom bij Ambitus! Begin met je profiel, dan kan Ambitus je beter helpen."
+msgstr ""
+"Bienvenue sur Ambitus ! Commence par ton profil, Ambitus pourra mieux "
+"t'aider."
+
+#: accounts/views.py:54 loopbaan/views.py:189 loopbaan/views.py:299
+msgid "Opgeslagen."
+msgstr "Enregistré."
+
+#: accounts/views.py:73
+msgid "Je account en al je gegevens zijn verwijderd."
+msgstr "Ton compte et toutes tes données ont été supprimés."
+
+#: accounts/views.py:76
+msgid "Typ je e-mailadres precies over om te bevestigen."
+msgstr "Saisis exactement ton adresse e-mail pour confirmer."
+
+#: accounts/views.py:87
+msgid "Uitnodiging gemaakt. Kopieer de link en stuur hem door."
+msgstr "Invitation créée. Copie le lien et envoie-le."
+
+#: loopbaan/forms.py:33
+msgid ""
+"Beantwoord minstens drie vragen, dan heeft Ambitus genoeg om mee te werken."
+msgstr ""
+"Réponds à au moins trois questions pour qu'Ambitus ait de quoi travailler."
+
+#: loopbaan/forms.py:82
+msgid "Wensen (optioneel)"
+msgstr "Souhaits (facultatif)"
+
+#: loopbaan/forms.py:85
+msgid ""
+"Bijvoorbeeld: noem mijn stage bij de gemeente, houd het formeel, korter."
+msgstr ""
+"Par exemple : mentionne mon stage à la mairie, reste formel, plus court."
+
+#: loopbaan/forms.py:102
+msgid "Jouw antwoord"
+msgstr "Ta réponse"
+
+#: loopbaan/models.py:15
+msgid "Waar sta je nu?"
+msgstr "Où en es-tu ?"
+
+#: loopbaan/models.py:17
+msgid ""
+"Bijvoorbeeld: net afgestudeerd, aan het werk maar wil iets anders, "
+"tussenjaar."
+msgstr ""
+"Par exemple : tout juste diplômé, en poste mais envie d'autre chose, année "
+"de césure."
+
+#: loopbaan/models.py:19
+msgid "Opleiding"
+msgstr "Formation"
+
+#: loopbaan/models.py:19
+msgid "Studies, diploma's, vakken die je goed lagen."
+msgstr "Études, diplômes, matières qui te plaisaient."
+
+#: loopbaan/models.py:21
+msgid "Ervaring"
+msgstr "Expérience"
+
+#: loopbaan/models.py:21
+msgid "Banen, stages, bijbanen, besturen, vrijwilligerswerk."
+msgstr "Emplois, stages, jobs étudiants, associations, bénévolat."
+
+#: loopbaan/models.py:23
+msgid "Waar ben je goed in?"
+msgstr "Dans quoi es-tu doué ?"
+
+#: loopbaan/models.py:24
+msgid "Wat interesseert je?"
+msgstr "Qu'est-ce qui t'intéresse ?"
+
+#: loopbaan/models.py:26
+msgid "Wat vind je belangrijk in werk?"
+msgstr "Qu'est-ce qui compte pour toi dans le travail ?"
+
+#: loopbaan/models.py:26
+msgid "Bijvoorbeeld: zingeving, salaris, vrijheid, een team."
+msgstr "Par exemple : le sens, le salaire, la liberté, une équipe."
+
+#: loopbaan/models.py:28
+msgid "Talen die je spreekt"
+msgstr "Langues que tu parles"
+
+#: loopbaan/models.py:30
+msgid "Waar wil je werken?"
+msgstr "Où veux-tu travailler ?"
+
+#: loopbaan/models.py:30
+msgid "Steden, landen, of op afstand."
+msgstr "Villes, pays ou à distance."
+
+#: loopbaan/models.py:33
+msgid "Waar moet rekening mee gehouden worden?"
+msgstr "De quoi faut-il tenir compte ?"
+
+#: loopbaan/models.py:35
+msgid "Uren, startdatum, visum, wat je absoluut niet wilt."
+msgstr "Horaires, date de début, visa, ce que tu ne veux surtout pas."
+
+#: loopbaan/models.py:38
+msgid "Je cv"
+msgstr "Ton CV"
+
+#: loopbaan/models.py:38
+msgid "Plak hier de tekst van je huidige cv. Opmaak is niet nodig."
+msgstr "Colle ici le texte de ton CV actuel. Pas besoin de mise en forme."
+
+#: loopbaan/models.py:82
+msgid "Interessant"
+msgstr "Intéressant"
+
+#: loopbaan/models.py:83
+msgid "Mee bezig"
+msgstr "En cours"
+
+#: loopbaan/models.py:84
+msgid "Verstuurd"
+msgstr "Envoyée"
+
+#: loopbaan/models.py:85
+msgid "Gesprek"
+msgstr "Entretien"
+
+#: loopbaan/models.py:86
+msgid "Aanbod"
+msgstr "Offre"
+
+#: loopbaan/models.py:87
+msgid "Afgewezen"
+msgstr "Refusée"
+
+#: loopbaan/models.py:88
+msgid "Gestopt"
+msgstr "Abandonnée"
+
+#: loopbaan/models.py:93
+msgid "Organisatie"
+msgstr "Organisation"
+
+#: loopbaan/models.py:94
+msgid "Functie"
+msgstr "Poste"
+
+#: loopbaan/models.py:95
+msgid "Link naar de vacature"
+msgstr "Lien vers l'offre"
+
+#: loopbaan/models.py:96
+msgid "Plaats"
+msgstr "Lieu"
+
+#: loopbaan/models.py:98 templates/loopbaan/application_detail.html:44
+msgid "Vacaturetekst"
+msgstr "Texte de l'offre"
+
+#: loopbaan/models.py:100
+msgid ""
+"Plak de vacature hier. Ambitus gebruikt deze tekst voor je brief en je "
+"gesprek."
+msgstr "Colle l'offre ici. Ambitus s'en sert pour ta lettre et ton entretien."
+
+#: loopbaan/models.py:102 templates/loopbaan/application_detail.html:10
+msgid "Status"
+msgstr "Statut"
+
+#: loopbaan/models.py:103 templates/loopbaan/application_detail.html:18
+msgid "Deadline"
+msgstr "Date limite"
+
+#: loopbaan/models.py:104 templates/loopbaan/application_detail.html:17
+msgid "Volgende stap"
+msgstr "Prochaine étape"
+
+#: loopbaan/models.py:105
+msgid "Wanneer"
+msgstr "Quand"
+
+#: loopbaan/models.py:106 templates/loopbaan/application_detail.html:19
+msgid "Contactpersoon"
+msgstr "Contact"
+
+#: loopbaan/models.py:107
+msgid "Notities"
+msgstr "Notes"
+
+#: loopbaan/models.py:149 templates/loopbaan/application_detail.html:29
+msgid "Motivatiebrief"
+msgstr "Lettre de motivation"
+
+#: loopbaan/models.py:150
+msgid "Cv-advies"
+msgstr "Conseils CV"
+
+#: loopbaan/models.py:156
+msgid "Tekst"
+msgstr "Texte"
+
+#: loopbaan/orientation.py:6
+msgid ""
+"Wanneer had je de afgelopen jaren het gevoel dat de tijd vloog? Wat deed je "
+"toen?"
+msgstr ""
+"Ces dernières années, quand as-tu eu l'impression que le temps filait ? Que "
+"faisais-tu ?"
+
+#: loopbaan/orientation.py:7
+msgid "Van welk soort taken of omgevingen word je moe of chagrijnig?"
+msgstr "Quels types de tâches ou d'environnements te fatiguent ou t'agacent ?"
+
+#: loopbaan/orientation.py:8
+msgid "Waar ben je trots op, binnen of buiten je studie?"
+msgstr "De quoi es-tu fier, dans tes études ou en dehors ?"
+
+#: loopbaan/orientation.py:9
+msgid ""
+"Werk je liever alleen, in een klein team of met veel mensen? Met wie het "
+"liefst?"
+msgstr ""
+"Préfères-tu travailler seul, en petite équipe ou avec beaucoup de monde ? "
+"Avec qui, idéalement ?"
+
+#: loopbaan/orientation.py:10
+msgid "Op welk gebied zou je iets willen veranderen of bijdragen?"
+msgstr "Dans quel domaine aimerais-tu changer quelque chose ou contribuer ?"
+
+#: loopbaan/orientation.py:11
+msgid "Beschrijf een werkdag over drie jaar waar je blij van zou worden."
+msgstr "Décris une journée de travail dans trois ans qui te rendrait heureux."
+
+#: loopbaan/orientation.py:12
+msgid "Wat houdt je tegen, of waar ben je onzeker over?"
+msgstr "Qu'est-ce qui te freine, ou de quoi doutes-tu ?"
+
+#: loopbaan/orientation.py:13
+msgid "Wat wil je in je eerste baan absoluut niet?"
+msgstr "Que ne veux-tu surtout pas dans ton premier emploi ?"
+
+#: loopbaan/views.py:30
+msgid ""
+"Je hebt deze maand je AI-acties opgebruikt. Volgende maand kun je weer "
+"verder."
+msgstr ""
+"Tu as utilisé toutes tes actions IA ce mois-ci. Tu pourras continuer le mois"
+" prochain."
+
+#: loopbaan/views.py:32
+msgid ""
+"Hier kon Ambitus geen antwoord op geven. Pas je tekst aan en probeer het "
+"opnieuw."
+msgstr "Ambitus n'a pas pu répondre. Modifie ton texte et réessaie."
+
+#: loopbaan/views.py:33
+msgid "Het is even druk. Probeer het over een minuut opnieuw."
+msgstr "C'est chargé en ce moment. Réessaie dans une minute."
+
+#: loopbaan/views.py:34
+msgid "Ambitus kon de AI niet bereiken. Probeer het later opnieuw."
+msgstr "Ambitus n'a pas pu joindre l'IA. Réessaie plus tard."
+
+#: loopbaan/views.py:35
+msgid "De AI is nog niet goed ingesteld. Laat het de beheerder weten."
+msgstr "L'IA n'est pas encore bien configurée. Préviens l'administrateur."
+
+#: loopbaan/views.py:36
+msgid "Er ging iets mis. Probeer het opnieuw."
+msgstr "Une erreur s'est produite. Réessaie."
+
+#: loopbaan/views.py:84
+msgid "Je profiel is opgeslagen."
+msgstr "Ton profil a été enregistré."
+
+#: loopbaan/views.py:129 loopbaan/views.py:212 loopbaan/views.py:310
+#: loopbaan/views.py:398
+msgid "Verwijderd."
+msgstr "Supprimé."
+
+#: loopbaan/views.py:158
+msgid "Toegevoegd."
+msgstr "Ajouté."
+
+#: loopbaan/views.py:244
+msgid "Motivatiebrief schrijven"
+msgstr "Écrire une lettre de motivation"
+
+#: loopbaan/views.py:245
+msgid ""
+"Ambitus schrijft een eerste versie op basis van je profiel, je cv en de "
+"vacaturetekst. Daarna pas je hem zelf aan."
+msgstr ""
+"Ambitus rédige une première version à partir de ton profil, de ton CV et de "
+"l'offre. Ensuite, tu l'adaptes toi-même."
+
+#: loopbaan/views.py:271 templates/loopbaan/application_detail.html:30
+msgid "Cv afstemmen"
+msgstr "Adapter ton CV"
+
+#: loopbaan/views.py:272
+msgid ""
+"Ambitus vergelijkt je cv met de vacature en zegt wat je kunt aanpassen."
+msgstr "Ambitus compare ton CV à l'offre et te dit quoi modifier."
+
+#: loopbaan/views.py:288
+msgid "Woorden uit de vacature:"
+msgstr "Mots de l'offre :"
+
+#: loopbaan/views.py:339 templates/loopbaan/application_detail.html:31
+#: templates/loopbaan/interview_detail.html:2
+#: templates/loopbaan/interview_detail.html:5
+msgid "Gesprek voorbereiden"
+msgstr "Préparer l'entretien"
+
+#: loopbaan/views.py:340
+msgid ""
+"Ambitus bedenkt de vragen die je waarschijnlijk krijgt, met uitleg hoe je ze"
+" aanpakt. Daarna kun je antwoorden oefenen en feedback krijgen."
+msgstr ""
+"Ambitus imagine les questions qu'on te posera probablement et explique "
+"comment y répondre. Ensuite, tu peux t'entraîner et recevoir des retours."
+
+#: loopbaan/views.py:377
+msgid "Schrijf eerst een antwoord."
+msgstr "Écris d'abord une réponse."
+
+#: loopbaan/views.py:400 templates/loopbaan/application_detail.html:39
+msgid "Gespreksvoorbereiding"
+msgstr "Préparation d'entretien"
+
+#: templates/_ai_budget.html:1
+#, python-format
+msgid "Je hebt deze maand nog %(n)s AI-actie over."
+msgid_plural "Je hebt deze maand nog %(n)s AI-acties over."
+msgstr[0] "Il te reste %(n)s action IA ce mois-ci."
+msgstr[1] "Il te reste %(n)s actions IA ce mois-ci."
+
+#: templates/_ai_submit.html:1
+msgid "Even geduld, dit duurt meestal een halve minuut…"
+msgstr "Un instant, cela prend en général une demi-minute…"
+
+#: templates/_nav.html:1
+msgid "Overzicht"
+msgstr "Accueil"
+
+#: templates/_nav.html:2 templates/loopbaan/home.html:47
+#: templates/loopbaan/orientation.html:2
+msgid "Oriëntatie"
+msgstr "Orientation"
+
+#: templates/_nav.html:3 templates/loopbaan/application_detail.html:4
+#: templates/loopbaan/applications.html:2
+#: templates/loopbaan/applications.html:5 templates/loopbaan/home.html:17
+msgid "Sollicitaties"
+msgstr "Candidatures"
+
+#: templates/_nav.html:4 templates/loopbaan/home.html:10
+#: templates/loopbaan/profile.html:2
+msgid "Profiel"
+msgstr "Profil"
+
+#: templates/accounts/account.html:2 templates/accounts/account.html:4
+#: templates/base.html:25
+msgid "Account"
+msgstr "Compte"
+
+#: templates/accounts/account.html:8 templates/accounts/password.html:6
+#: templates/loopbaan/application_detail.html:14
+#: templates/loopbaan/application_form.html:26
+#: templates/loopbaan/document_detail.html:13
+#: templates/loopbaan/profile.html:27
+msgid "Opslaan"
+msgstr "Enregistrer"
+
+#: templates/accounts/account.html:12
+msgid "Beheer"
+msgstr "Administration"
+
+#: templates/accounts/account.html:14 templates/accounts/invites.html:4
+msgid "Mensen uitnodigen"
+msgstr "Inviter des personnes"
+
+#: templates/accounts/account.html:15
+msgid "Beheeromgeving"
+msgstr "Espace d'administration"
+
+#: templates/accounts/account.html:19
+msgid "Je gegevens"
+msgstr "Tes données"
+
+#: templates/accounts/account.html:21 templates/accounts/password.html:3
+msgid "Wachtwoord wijzigen"
+msgstr "Changer de mot de passe"
+
+#: templates/accounts/account.html:22
+msgid "Alles downloaden"
+msgstr "Tout télécharger"
+
+#: templates/accounts/account.html:23 templates/accounts/delete.html:3
+msgid "Account verwijderen"
+msgstr "Supprimer le compte"
+
+#: templates/accounts/account.html:27
+msgid "Uitloggen"
+msgstr "Se déconnecter"
+
+#: templates/accounts/delete.html:5
+msgid ""
+"Dit verwijdert je account en alles wat je in Ambitus hebt gezet: je profiel,"
+" oriëntaties, sollicitaties, brieven en voorbereidingen. Dit kan niet "
+"ongedaan worden gemaakt."
+msgstr ""
+"Cela supprime ton compte et tout ce que tu as mis dans Ambitus : profil, "
+"orientations, candidatures, lettres et préparations. C'est irréversible."
+
+#: templates/accounts/delete.html:6
+msgid "Download eerst je gegevens"
+msgstr "Télécharge d'abord tes données"
+
+#: templates/accounts/delete.html:9
+#, python-format
+msgid "Typ %(email)s om te bevestigen"
+msgstr "Saisis %(email)s pour confirmer"
+
+#: templates/accounts/delete.html:13
+msgid "Definitief verwijderen"
+msgstr "Supprimer définitivement"
+
+#: templates/accounts/delete.html:14
+#: templates/loopbaan/application_form.html:27
+#: templates/loopbaan/confirm_delete.html:8
+msgid "Annuleren"
+msgstr "Annuler"
+
+#: templates/accounts/invite_invalid.html:3
+msgid "Deze link werkt niet meer"
+msgstr "Ce lien ne fonctionne plus"
+
+#: templates/accounts/invite_invalid.html:4
+msgid ""
+"De uitnodiging is al gebruikt of verlopen. Vraag degene die je heeft "
+"uitgenodigd om een nieuwe link."
+msgstr ""
+"L'invitation a déjà été utilisée ou a expiré. Demande un nouveau lien à la "
+"personne qui t'a invité."
+
+#: templates/accounts/invite_invalid.html:5 templates/accounts/login.html:2
+#: templates/accounts/login.html:4 templates/accounts/login.html:8
+#: templates/loopbaan/landing.html:16
+msgid "Inloggen"
+msgstr "Se connecter"
+
+#: templates/accounts/invites.html:2 templates/accounts/invites.html:11
+msgid "Uitnodigingen"
+msgstr "Invitations"
+
+#: templates/accounts/invites.html:5
+msgid "Elke link werkt één keer. Stuur hem bijvoorbeeld via WhatsApp."
+msgstr ""
+"Chaque lien ne fonctionne qu'une fois. Envoie-le par WhatsApp, par exemple."
+
+#: templates/accounts/invites.html:8
+msgid "Link maken"
+msgstr "Créer un lien"
+
+#: templates/accounts/invites.html:16
+msgid "Gebruikt"
+msgstr "Utilisée"
+
+#: templates/accounts/invites.html:17
+msgid "Open"
+msgstr "Ouverte"
+
+#: templates/accounts/invites.html:18
+msgid "Verlopen"
+msgstr "Expirée"
+
+#: templates/accounts/invites.html:26
+#: templates/loopbaan/document_detail.html:14
+msgid "Gekopieerd"
+msgstr "Copié"
+
+#: templates/accounts/invites.html:26
+#: templates/loopbaan/document_detail.html:14
+msgid "Kopiëren"
+msgstr "Copier"
+
+#: templates/accounts/invites.html:27
+#, python-format
+msgid "Je bent uitgenodigd voor Ambitus: %(link)s"
+msgstr "Tu es invité sur Ambitus : %(link)s"
+
+#: templates/accounts/invites.html:27
+msgid "Delen"
+msgstr "Partager"
+
+#: templates/accounts/invites.html:29
+#, python-format
+msgid "Geldig tot %(date)s"
+msgstr "Valable jusqu'au %(date)s"
+
+#: templates/accounts/invites.html:34
+msgid "Nog geen uitnodigingen."
+msgstr "Pas encore d'invitations."
+
+#: templates/accounts/login.html:10
+msgid ""
+"Wachtwoord vergeten? Vraag degene die je heeft uitgenodigd om je wachtwoord "
+"opnieuw in te stellen."
+msgstr ""
+"Mot de passe oublié ? Demande à la personne qui t'a invité de le "
+"réinitialiser."
+
+#: templates/accounts/signup.html:2 templates/accounts/signup.html:16
+msgid "Account maken"
+msgstr "Créer un compte"
+
+#: templates/accounts/signup.html:4
+msgid "Je bent uitgenodigd"
+msgstr "Tu es invité"
+
+#: templates/accounts/signup.html:5
+msgid "Welkom bij Ambitus"
+msgstr "Bienvenue sur Ambitus"
+
+#: templates/accounts/signup.html:6
+msgid ""
+"Maak je account. Daarna vul je je profiel in en kun je meteen beginnen."
+msgstr ""
+"Crée ton compte. Ensuite, remplis ton profil et tu peux commencer tout de "
+"suite."
+
+#: templates/accounts/signup.html:14
+msgid "Lees hoe Ambitus met je gegevens omgaat"
+msgstr "Lis comment Ambitus traite tes données"
+
+#: templates/base.html:22 templates/base.html:46
+msgid "Hoofdmenu"
+msgstr "Menu principal"
+
+#: templates/base.html:52 templates/loopbaan/privacy.html:2
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#: templates/loopbaan/ai_request.html:7
+msgid ""
+"Er staat nog geen vacaturetekst bij deze sollicitatie. Het resultaat wordt "
+"dan algemener."
+msgstr ""
+"Cette candidature n'a pas encore de texte d'offre. Le résultat sera donc "
+"plus général."
+
+#: templates/loopbaan/ai_request.html:7
+#: templates/loopbaan/application_detail.html:27
+msgid "Toevoegen"
+msgstr "Ajouter"
+
+#: templates/loopbaan/ai_request.html:8
+msgid "Je hebt nog geen cv in je profiel gezet."
+msgstr "Tu n'as pas encore ajouté de CV à ton profil."
+
+#: templates/loopbaan/ai_request.html:8 templates/loopbaan/orientation.html:7
+msgid "Naar je profiel"
+msgstr "Aller à ton profil"
+
+#: templates/loopbaan/ai_request.html:11
+msgid "Maken"
+msgstr "Créer"
+
+#: templates/loopbaan/application_detail.html:20
+msgid "Vacature openen"
+msgstr "Ouvrir l'offre"
+
+#: templates/loopbaan/application_detail.html:23
+#: templates/loopbaan/application_form.html:3
+msgid "Bewerken"
+msgstr "Modifier"
+
+#: templates/loopbaan/application_detail.html:26
+msgid "Hulp van Ambitus"
+msgstr "L'aide d'Ambitus"
+
+#: templates/loopbaan/application_detail.html:27
+msgid ""
+"Plak eerst de vacaturetekst bij deze sollicitatie, dan kan Ambitus gericht "
+"helpen."
+msgstr ""
+"Colle d'abord le texte de l'offre dans cette candidature pour qu'Ambitus "
+"puisse t'aider de façon ciblée."
+
+#: templates/loopbaan/application_detail.html:29
+msgid "Een eerste versie in de taal van de vacature."
+msgstr "Une première version dans la langue de l'offre."
+
+#: templates/loopbaan/application_detail.html:30
+msgid "Wat je aan je cv verandert voor deze functie."
+msgstr "Ce qu'il faut changer dans ton CV pour ce poste."
+
+#: templates/loopbaan/application_detail.html:31
+msgid "Waarschijnlijke vragen, en oefenen met feedback."
+msgstr "Questions probables, et entraînement avec retours."
+
+#: templates/loopbaan/application_detail.html:36
+msgid "Gemaakt voor deze sollicitatie"
+msgstr "Créé pour cette candidature"
+
+#: templates/loopbaan/application_detail.html:48
+msgid "Geschiedenis"
+msgstr "Historique"
+
+#: templates/loopbaan/application_detail.html:53
+msgid "Sollicitatie verwijderen"
+msgstr "Supprimer la candidature"
+
+#: templates/loopbaan/application_form.html:3
+msgid "Nieuwe sollicitatie"
+msgstr "Nouvelle candidature"
+
+#: templates/loopbaan/applications.html:6 templates/loopbaan/home.html:18
+msgid "Nieuw"
+msgstr "Nouveau"
+
+#: templates/loopbaan/applications.html:9
+msgid "Lopend"
+msgstr "En cours"
+
+#: templates/loopbaan/applications.html:10
+msgid "Afgerond"
+msgstr "Terminées"
+
+#: templates/loopbaan/applications.html:27
+msgid "Nog niets afgerond."
+msgstr "Rien de terminé pour l'instant."
+
+#: templates/loopbaan/applications.html:29
+msgid ""
+"Hier houd je bij waar je op wilt reageren, waar je hebt gesolliciteerd en "
+"wat de volgende stap is."
+msgstr ""
+"Ici, tu suis les offres qui t'intéressent, tes candidatures envoyées et la "
+"prochaine étape."
+
+#: templates/loopbaan/applications.html:30
+msgid "Eerste vacature toevoegen"
+msgstr "Ajouter ta première offre"
+
+#: templates/loopbaan/confirm_delete.html:3
+msgid "Verwijderen?"
+msgstr "Supprimer ?"
+
+#: templates/loopbaan/confirm_delete.html:5
+#, python-format
+msgid ""
+"Weet je zeker dat je „%(object)s” wilt verwijderen? Dit kan niet ongedaan "
+"worden gemaakt."
+msgstr "Veux-tu vraiment supprimer « %(object)s » ? C'est irréversible."
+
+#: templates/loopbaan/confirm_delete.html:7
+#: templates/loopbaan/document_detail.html:15
+#: templates/loopbaan/orientation_detail.html:31
+msgid "Verwijderen"
+msgstr "Supprimer"
+
+#: templates/loopbaan/document_detail.html:8
+msgid "Let hierop"
+msgstr "Points d'attention"
+
+#: templates/loopbaan/home.html:3
+#, python-format
+msgid "Hoi %(name)s"
+msgstr "Salut %(name)s"
+
+#: templates/loopbaan/home.html:7
+msgid "Eerste stap"
+msgstr "Première étape"
+
+#: templates/loopbaan/home.html:8
+msgid "Vul je profiel aan"
+msgstr "Complète ton profil"
+
+#: templates/loopbaan/home.html:9
+msgid ""
+"Hoe meer Ambitus van je weet, hoe beter het advies en hoe persoonlijker je "
+"brieven."
+msgstr ""
+"Plus Ambitus en sait sur toi, meilleurs sont les conseils et plus tes "
+"lettres sont personnelles."
+
+#: templates/loopbaan/home.html:11
+#, python-format
+msgid "%(p)s%% ingevuld"
+msgstr "%(p)s%% rempli"
+
+#: templates/loopbaan/home.html:25
+msgid ""
+"Nog niets bijgehouden. Zet er een vacature in die je interessant vindt, ook "
+"als je nog twijfelt."
+msgstr ""
+"Rien de suivi pour l'instant. Ajoute une offre qui t'intéresse, même si tu "
+"hésites encore."
+
+#: templates/loopbaan/home.html:31
+msgid "Binnenkort"
+msgstr "Bientôt"
+
+#: templates/loopbaan/home.html:39
+msgid "deadline"
+msgstr "date limite"
+
+#: templates/loopbaan/home.html:49
+#: templates/loopbaan/orientation_detail.html:2
+#: templates/loopbaan/orientation_detail.html:5
+msgid "Jouw richtingen"
+msgstr "Tes pistes"
+
+#: templates/loopbaan/home.html:52
+msgid "Bekijken"
+msgstr "Voir"
+
+#: templates/loopbaan/home.html:53
+#: templates/loopbaan/orientation_detail.html:30
+msgid "Opnieuw doen"
+msgstr "Recommencer"
+
+#: templates/loopbaan/home.html:56
+msgid "Weet je nog niet goed wat je wilt?"
+msgstr "Tu ne sais pas encore bien ce que tu veux ?"
+
+#: templates/loopbaan/home.html:57
+msgid ""
+"Beantwoord een paar vragen en krijg richtingen die bij je passen, met "
+"concrete functies en eerste stappen."
+msgstr ""
+"Réponds à quelques questions et découvre des pistes qui te correspondent, "
+"avec des postes concrets et des premières étapes."
+
+#: templates/loopbaan/home.html:58
+msgid "Begin met oriënteren"
+msgstr "Commencer à explorer"
+
+#: templates/loopbaan/interview_detail.html:8
+msgid "Vragen die je kunt verwachten"
+msgstr "Questions à prévoir"
+
+#: templates/loopbaan/interview_detail.html:13
+msgid "Waarom ze dit vragen"
+msgstr "Pourquoi on te le demande"
+
+#: templates/loopbaan/interview_detail.html:14
+msgid "Hoe je het aanpakt"
+msgstr "Comment y répondre"
+
+#: templates/loopbaan/interview_detail.html:18
+msgid "Je oefenantwoord"
+msgstr "Ta réponse d'entraînement"
+
+#: templates/loopbaan/interview_detail.html:20
+msgid "Wat goed is"
+msgstr "Ce qui marche"
+
+#: templates/loopbaan/interview_detail.html:22
+msgid "Wat beter kan"
+msgstr "Ce qui peut être amélioré"
+
+#: templates/loopbaan/interview_detail.html:24
+msgid "Sterkere versie"
+msgstr "Version plus forte"
+
+#: templates/loopbaan/interview_detail.html:32
+msgid "Nog een keer oefenen"
+msgstr "S'entraîner encore"
+
+#: templates/loopbaan/interview_detail.html:32
+msgid "Oefen je antwoord"
+msgstr "Entraîne-toi à répondre"
+
+#: templates/loopbaan/interview_detail.html:33
+msgid "Schrijf op wat je zou zeggen."
+msgstr "Écris ce que tu dirais."
+
+#: templates/loopbaan/interview_detail.html:35
+msgid "Feedback vragen"
+msgstr "Demander un retour"
+
+#: templates/loopbaan/interview_detail.html:42
+msgid "Vragen die jij kunt stellen"
+msgstr "Questions que tu peux poser"
+
+#: templates/loopbaan/interview_detail.html:45
+msgid "Voorbereiding verwijderen"
+msgstr "Supprimer la préparation"
+
+#: templates/loopbaan/landing.html:5
+msgid "Klaar met studeren. En nu?"
+msgstr "Fini les études. Et maintenant ?"
+
+#: templates/loopbaan/landing.html:6
+msgid ""
+"Ambitus helpt je uitzoeken wat je wilt, houdt je sollicitaties bij en helpt "
+"je met je brief, je cv en je gesprek."
+msgstr ""
+"Ambitus t'aide à savoir ce que tu veux, suit tes candidatures et t'aide pour"
+" ta lettre, ton CV et ton entretien."
+
+#: templates/loopbaan/landing.html:10
+msgid "Vertel wie je bent en wat je belangrijk vindt."
+msgstr "Dis qui tu es et ce qui compte pour toi."
+
+#: templates/loopbaan/landing.html:11
+msgid ""
+"Ontdek richtingen die bij je passen, met concrete functies en eerste "
+"stappen."
+msgstr ""
+"Découvre des pistes qui te correspondent, avec des postes concrets et des "
+"premières étapes."
+
+#: templates/loopbaan/landing.html:12
+msgid "Houd je sollicitaties bij en laat Ambitus meeschrijven en meedenken."
+msgstr ""
+"Suis tes candidatures et laisse Ambitus t'aider à écrire et à réfléchir."
+
+#: templates/loopbaan/landing.html:18
+msgid ""
+"Ambitus werkt op uitnodiging. Heb je een link gekregen? Open die om je "
+"account te maken."
+msgstr ""
+"Ambitus fonctionne sur invitation. Tu as reçu un lien ? Ouvre-le pour créer "
+"ton compte."
+
+#: templates/loopbaan/orientation.html:4
+msgid "Wat past bij jou?"
+msgstr "Qu'est-ce qui te correspond ?"
+
+#: templates/loopbaan/orientation.html:5
+msgid ""
+"Neem er een kwartier voor. Er zijn geen goede of foute antwoorden, en je mag"
+" vragen overslaan."
+msgstr ""
+"Prends un quart d'heure. Il n'y a pas de bonnes ou de mauvaises réponses, et"
+" tu peux sauter des questions."
+
+#: templates/loopbaan/orientation.html:7
+msgid ""
+"Tip: vul eerst je profiel in (opleiding, ervaring), dan worden de richtingen"
+" veel concreter."
+msgstr ""
+"Astuce : remplis d'abord ton profil (formation, expérience), les pistes "
+"seront bien plus concrètes."
+
+#: templates/loopbaan/orientation.html:11
+msgid "Laat richtingen zien"
+msgstr "Voir les pistes"
+
+#: templates/loopbaan/orientation.html:16
+msgid "Eerder"
+msgstr "Précédemment"
+
+#: templates/loopbaan/orientation_detail.html:12
+msgid "Functies om te bekijken"
+msgstr "Postes à regarder"
+
+#: templates/loopbaan/orientation_detail.html:14
+msgid "Als sollicitatie bijhouden"
+msgstr "Suivre comme candidature"
+
+#: templates/loopbaan/orientation_detail.html:16
+msgid "Waar je kunt zoeken"
+msgstr "Où chercher"
+
+#: templates/loopbaan/orientation_detail.html:18
+msgid "Probeer deze week"
+msgstr "À tester cette semaine"
+
+#: templates/loopbaan/orientation_detail.html:20
+msgid "Let op:"
+msgstr "Attention :"
+
+#: templates/loopbaan/orientation_detail.html:25
+msgid "Je antwoorden"
+msgstr "Tes réponses"
+
+#: templates/loopbaan/privacy.html:4
+msgid "Hoe Ambitus met je gegevens omgaat"
+msgstr "Comment Ambitus traite tes données"
+
+#: templates/loopbaan/privacy.html:6
+msgid "Wat we bewaren"
+msgstr "Ce que nous conservons"
+
+#: templates/loopbaan/privacy.html:7
+msgid ""
+"Je naam, e-mailadres, wat je in je profiel en de oriëntatievragen invult, je"
+" sollicitaties en de teksten die Ambitus voor je maakt. Je wachtwoord wordt "
+"alleen versleuteld opgeslagen."
+msgstr ""
+"Ton nom, ton adresse e-mail, ce que tu saisis dans ton profil et les "
+"questions d'orientation, tes candidatures et les textes qu'Ambitus rédige "
+"pour toi. Ton mot de passe n'est stocké que sous forme chiffrée."
+
+#: templates/loopbaan/privacy.html:8
+msgid "Waarvoor"
+msgstr "Dans quel but"
+
+#: templates/loopbaan/privacy.html:9
+msgid ""
+"Alleen om jou te helpen. We verkopen niets, tonen geen advertenties en delen"
+" je gegevens met niemand anders."
+msgstr ""
+"Uniquement pour t'aider. Nous ne vendons rien, n'affichons aucune publicité "
+"et ne partageons tes données avec personne d'autre."
+
+#: templates/loopbaan/privacy.html:10
+msgid "AI"
+msgstr "IA"
+
+#: templates/loopbaan/privacy.html:11
+msgid ""
+"Als je op een AI-knop drukt, sturen we je profiel, je cv en de betreffende "
+"vacature naar Anthropic (de maker van Claude) om de tekst te laten "
+"schrijven. Anthropic gebruikt die gegevens volgens zijn API-voorwaarden niet"
+" om modellen te trainen. Zet geen gegevens in Ambitus die je niet wilt "
+"delen, zoals je BSN of medische informatie."
+msgstr ""
+"Quand tu appuies sur un bouton IA, nous envoyons ton profil, ton CV et "
+"l'offre concernée à Anthropic (l'éditeur de Claude) pour rédiger le texte. "
+"Selon ses conditions d'API, Anthropic n'utilise pas ces données pour "
+"entraîner ses modèles. Ne mets rien dans Ambitus que tu ne veux pas "
+"partager, comme un numéro d'identité ou des informations médicales."
+
+#: templates/loopbaan/privacy.html:12
+msgid "Waar"
+msgstr "Où"
+
+#: templates/loopbaan/privacy.html:13
+msgid "De gegevens staan op een server in de EU."
+msgstr "Les données sont stockées sur un serveur dans l'UE."
+
+#: templates/loopbaan/privacy.html:14
+msgid "Jouw rechten"
+msgstr "Tes droits"
+
+#: templates/loopbaan/privacy.html:15
+msgid ""
+"Je kunt op je accountpagina al je gegevens downloaden en je account met "
+"alles erin definitief verwijderen."
+msgstr ""
+"Sur ta page de compte, tu peux télécharger toutes tes données et supprimer "
+"définitivement ton compte avec tout son contenu."
+
+#: templates/loopbaan/profile.html:4
+msgid "Je profiel"
+msgstr "Ton profil"
+
+#: templates/loopbaan/profile.html:5
+msgid ""
+"Schrijf zoals je praat. Steekwoorden zijn prima. Ambitus gebruikt dit voor "
+"alle adviezen en teksten, en verzint er niets bij."
+msgstr ""
+"Écris comme tu parles. Des mots-clés suffisent. Ambitus s'en sert pour tous "
+"les conseils et textes, sans rien inventer."
+
+#: templates/loopbaan/profile.html:9
+msgid "Over jou"
+msgstr "À propos de toi"
+
+#: templates/loopbaan/profile.html:17
+msgid "Wat je zoekt"
+msgstr "Ce que tu cherches"
+
+#: templates/loopbaan/profile.html:24
+msgid "Cv"
+msgstr "CV"

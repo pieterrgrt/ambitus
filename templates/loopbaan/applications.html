@@ -1,0 +1,34 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Sollicitaties" %} · Ambitus{% endblock %}
+{% block content %}
+<div class="row between">
+  <h1 style="margin:0">{% translate "Sollicitaties" %}</h1>
+  <a class="button primary small" href="{% url 'application_new' %}">+ {% translate "Nieuw" %}</a>
+</div>
+<p class="row" style="margin:14px 0 18px">
+  <a class="pill{% if show != 'afgerond' %} s-verstuurd{% endif %}" href="?toon=actief">{% translate "Lopend" %}</a>
+  <a class="pill{% if show == 'afgerond' %} s-verstuurd{% endif %}" href="?toon=afgerond">{% translate "Afgerond" %}</a>
+</p>
+{% for value, label, items in groups %}
+  <h2 class="eyebrow" style="margin-top:20px">{{ label }} · {{ items|length }}</h2>
+  {% for a in items %}
+    <a class="card" href="{{ a.get_absolute_url }}">
+      <div class="row between">
+        <strong>{{ a.role }}</strong>
+        {% if a.upcoming_date %}<span class="pill{% if a.is_overdue %} overdue{% endif %}">{{ a.upcoming_date|date:"j M" }}</span>{% endif %}
+      </div>
+      <span class="muted">{{ a.organisation }}{% if a.location %} · {{ a.location }}{% endif %}</span>
+      {% if a.next_step %}<p class="help">→ {{ a.next_step }}</p>{% endif %}
+    </a>
+  {% endfor %}
+{% empty %}
+  <div class="card">
+    {% if show == 'afgerond' %}
+      <p class="muted">{% translate "Nog niets afgerond." %}</p>
+    {% else %}
+      <p>{% translate "Hier houd je bij waar je op wilt reageren, waar je hebt gesolliciteerd en wat de volgende stap is." %}</p>
+      <a class="button primary" href="{% url 'application_new' %}">{% translate "Eerste vacature toevoegen" %}</a>
+    {% endif %}
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Uitnodigingen" %} · Ambitus{% endblock %}
+{% block content %}
+<h1>{% translate "Mensen uitnodigen" %}</h1>
+<p class="lead">{% translate "Elke link werkt één keer. Stuur hem bijvoorbeeld via WhatsApp." %}</p>
+<form method="post">{% csrf_token %}
+  <div class="card">{% include "_form.html" %}</div>
+  <button class="button primary" type="submit">{% translate "Link maken" %}</button>
+</form>
+
+<h2>{% translate "Uitnodigingen" %}</h2>
+{% for invite in invites %}
+  <div class="card">
+    <div class="row between">
+      <strong>{{ invite.note|default:"—" }}</strong>
+      {% if invite.used_by %}<span class="pill s-aanbod">{% translate "Gebruikt" %}</span>
+      {% elif invite.is_usable %}<span class="pill s-verstuurd">{% translate "Open" %}</span>
+      {% else %}<span class="pill">{% translate "Verlopen" %}</span>{% endif %}
+    </div>
+    {% if invite.used_by %}
+      <p class="muted">{{ invite.used_by.email }} · {{ invite.used_at|date:"j F Y" }}</p>
+    {% elif invite.is_usable %}
+      {% with link=request.scheme|add:"://"|add:request.get_host|add:invite.get_absolute_url %}
+      <p class="copy-link" id="invite-{{ invite.pk }}">{{ link }}</p>
+      <div class="actions">
+        <button class="button small" type="button" data-copy="#invite-{{ invite.pk }}" data-copied="{% translate 'Gekopieerd' %}">{% translate "Kopiëren" %}</button>
+        <button class="button small" type="button" hidden data-share="{% blocktranslate %}Je bent uitgenodigd voor Ambitus: {{ link }}{% endblocktranslate %}">{% translate "Delen" %}</button>
+      </div>
+      <p class="help">{% blocktranslate with date=invite.expires_at|date:"j F" %}Geldig tot {{ date }}{% endblocktranslate %}</p>
+      {% endwith %}
+    {% endif %}
+  </div>
+{% empty %}
+  <p class="muted">{% translate "Nog geen uitnodigingen." %}</p>
+{% endfor %}
+{% endblock %}

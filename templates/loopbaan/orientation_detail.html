@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Jouw richtingen" %} · Ambitus{% endblock %}
+{% block content %}
+<p class="eyebrow">{{ item.created_at|date:"j F Y" }}</p>
+<h1>{% translate "Jouw richtingen" %}</h1>
+<div class="card"><p class="lead" style="margin:0">{{ item.summary }}</p></div>
+
+{% for d in item.directions %}
+<section class="card direction">
+  <h3>{{ d.title }}</h3>
+  <p>{{ d.why_it_fits }}</p>
+  <p class="eyebrow">{% translate "Functies om te bekijken" %}</p>
+  <div class="tags">
+    {% for role in d.example_roles %}<a class="pill" href="{% url 'application_new' %}?functie={{ role|urlencode }}" title="{% translate 'Als sollicitatie bijhouden' %}">{{ role }}</a>{% endfor %}
+  </div>
+  <p class="eyebrow">{% translate "Waar je kunt zoeken" %}</p>
+  <ul class="plain">{% for w in d.where_to_look %}<li>{{ w }}</li>{% endfor %}</ul>
+  <p class="eyebrow">{% translate "Probeer deze week" %}</p>
+  <ul class="plain">{% for s in d.first_steps %}<li>{{ s }}</li>{% endfor %}</ul>
+  <p class="muted"><strong>{% translate "Let op:" %}</strong> {{ d.watch_out }}</p>
+</section>
+{% endfor %}
+
+<details class="card">
+  <summary>{% translate "Je antwoorden" %}</summary>
+  {% for qa in item.answers %}{% if qa.answer %}<p><strong>{{ qa.question }}</strong><br>{{ qa.answer|linebreaksbr }}</p>{% endif %}{% endfor %}
+</details>
+
+<div class="actions">
+  <a class="button" href="{% url 'orientation' %}">{% translate "Opnieuw doen" %}</a>
+  <form method="post" action="{% url 'orientation_delete' item.pk %}">{% csrf_token %}<button class="button danger" type="submit">{% translate "Verwijderen" %}</button></form>
+</div>
+{% endblock %}

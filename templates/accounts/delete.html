@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% translate "Account verwijderen" %}</h1>
+<div class="card">
+  <p>{% translate "Dit verwijdert je account en alles wat je in Ambitus hebt gezet: je profiel, oriëntaties, sollicitaties, brieven en voorbereidingen. Dit kan niet ongedaan worden gemaakt." %}</p>
+  <p><a href="{% url 'account_export' %}">{% translate "Download eerst je gegevens" %}</a></p>
+  <form method="post">{% csrf_token %}
+    <div class="field">
+      <label for="confirm">{% blocktranslate with email=user.email %}Typ {{ email }} om te bevestigen{% endblocktranslate %}</label>
+      <input type="email" id="confirm" name="confirm" autocomplete="off" required>
+    </div>
+    <div class="actions">
+      <button class="button danger" type="submit">{% translate "Definitief verwijderen" %}</button>
+      <a class="button" href="{% url 'account' %}">{% translate "Annuleren" %}</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
