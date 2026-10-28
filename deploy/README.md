@@ -1,20 +1,20 @@
 # Ambitus op een eigen server (naast andere sites)
 
-Ambitus draait in Docker (Django + PostgreSQL) en luistert alleen op `127.0.0.1:8006`. De webserver die al op de server draait (Caddy of nginx) stuurt het domein door naar die poort en regelt HTTPS.
+Ambitus draait in Docker (Django + PostgreSQL) en luistert alleen op `127.0.0.1:8006`. nginx op de server stuurt `ambitus.alduslab.eu` door naar die poort en regelt HTTPS. De live kopie staat in `~/ambitus-live`.
 
 ## Eenmalig
 
-1. **DNS**: A-record voor het (sub)domein → IP van de server.
+1. **DNS** (Infomaniak, zone alduslab.eu): A-record `ambitus` → `178.105.62.224`.
 2. **Op de server:**
    ```bash
-   git clone https://github.com/pieterrgrt/ambitus.git ~/ambitus
-   cd ~/ambitus
+   git clone https://github.com/pieterrgrt/ambitus.git ~/ambitus-live
+   cd ~/ambitus-live
    cp .env.example .env
    nano .env            # secret key, wachtwoord, domein, ANTHROPIC_API_KEY
    docker compose up -d --build
    curl http://127.0.0.1:8006/health   # moet "ok" geven
    ```
-3. **Webserver**: voeg `deploy/Caddyfile.example` toe aan de bestaande config en herlaad.
+3. **nginx en certificaat**: zie de stappen bovenaan `deploy/nginx/ambitus.alduslab.eu.conf`.
 4. **Eerste account (beheerder):**
    ```bash
    docker compose exec web python manage.py createsuperuser
@@ -31,7 +31,7 @@ Zet in `.env`: `DJANGO_ALLOWED_HOSTS=100.65.113.117`, `DJANGO_CSRF_TRUSTED_ORIGI
 ## Nieuwe versie live zetten
 
 ```bash
-cd ~/ambitus && ./deploy/update.sh
+cd ~/ambitus-live && ./deploy/update.sh
 ```
 
 ## Back-up
